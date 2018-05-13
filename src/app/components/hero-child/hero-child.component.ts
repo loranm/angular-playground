@@ -6,8 +6,16 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./hero-child.component.css']
 })
 export class HeroChildComponent {
+  private _masterName: string
 
   @Input() hero
-  @Input('master') masterName
+  @Input('master')
+    set masterName(master) {
+      this._masterName = master.toUpperCase()
+    }
+
+    get masterName() {
+      return this._masterName
+    }
 
 }
