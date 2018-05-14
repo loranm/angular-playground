@@ -1,0 +1,26 @@
+<p>
+  courses works!
+</p>
+
+<ul>
+  <li *ngFor="let course of courses$ | async ">{{ course.title }} - {{ course.author }} - {{ course.price | currency }}</li>
+</ul>
+
+<hr>
+<form style="margin: auto 30%" #f>
+  <div class="form-group">
+    <input class="form-control" type="text" #title placeholder="Title" />
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" #author placeholder="Author" />
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" #price placeholder="Price" />
+  </div>
+
+  <br />
+  <button class="btn btn-primary" (click)="addCourse(title.value,author.value,price.value, f.value)">Add Name</button>
+  <button class="btn btn-default" (click)="update(newsize.value)">Update Course</button>
+  <button class="btn btn-info" (click)="delete()">Delete Course</button>
+</form>
+
