@@ -10,7 +10,15 @@ import {
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.css']
+  styleUrls: ['./todos.component.css'],
+  animations: [
+    trigger('fade', [
+      state('void', style({opacity: 0})),
+      transition(':enter, :leave', [
+        animate(2000)
+      ])
+    ])
+  ]
 })
 export class TodosComponent {
   items: any[] = [
