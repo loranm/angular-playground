@@ -7,17 +7,14 @@ import {
   transition
 } from '@angular/animations';
 
+import { fade,slide } from '../../animation';
+
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css'],
   animations: [
-    trigger('fade', [
-      state('void', style({opacity: 0})),
-      transition(':enter, :leave', [
-        animate(2000)
-      ])
-    ])
+    fade,slide
   ]
 })
 export class TodosComponent {
